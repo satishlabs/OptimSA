@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://geronimo.apache.org/xml/ns/j2ee/web-2.0"
+  xmlns:dep="http://geronimo.apache.org/xml/ns/deployment-1.2"
+  xmlns:naming="http://geronimo.apache.org/xml/ns/naming-1.2"
+  xmlns:security="http://geronimo.apache.org/xml/ns/security-1.2">
+
+  <dep:environment>
+    <dep:moduleId>
+      <dep:groupId>ibm</dep:groupId>
+      <dep:artifactId>optimsa</dep:artifactId>
+      <dep:version>11.3.0</dep:version>
+      <dep:type>war</dep:type>
+    </dep:moduleId>
+    <dep:dependencies>
+    <dependency>
+        <groupId>console.dbpool</groupId>
+        <artifactId>siebelPool</artifactId>
+    </dependency>
+	<dependency>
+                <groupId>ibm</groupId>
+                <artifactId>nvapispy2</artifactId>
+                <type>jar</type>
+            </dependency>
+	   <dependency>
+                <groupId>ibm</groupId>
+                <artifactId>nvjdbc2</artifactId>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>ibm</groupId>
+                <artifactId>nvlog2</artifactId>
+                <type>jar</type>
+            </dependency>
+       <dependency>
+	    <groupId>xerces</groupId>
+	    <artifactId>xercesImpl</artifactId>
+	    <version>4.5.22</version>
+	    <type>jar</type>
+	</dependency>
+
+	
+    </dep:dependencies>
+    <dep:hidden-classes/>
+    <dep:non-overridable-classes/>
+  </dep:environment>
+
+  <context-root>/OptimSA</context-root>
+  <resource-ref>
+        <ref-name>jdbc/SiebelDataSource</ref-name>
+        <resource-link>siebelPool</resource-link>
+    </resource-ref>
+  
+</web-app>

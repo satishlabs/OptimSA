@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+
+  <welcome-file-list>
+    <welcome-file>register.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+   
+  </welcome-file-list>
+<display-name>Archetype Created Web Application</display-name>
+  <servlet>
+    <servlet-name>ServletReqInfo</servlet-name>
+    <servlet-class>com.pst.optim.servlet.ServletReqInfo</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>OptimRunner</servlet-name>
+    <servlet-class>com.pst.optim.servlet.OptimRunner</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ServletDeleteFolder</servlet-name>
+    <servlet-class>com.pst.optim.servlet.ServletDeleteFolder</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AuditTrialDecodeServlet</servlet-name>
+    <servlet-class>com.pst.optim.servlet.AuditTrialDecodeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletReqInfo</servlet-name>
+    <url-pattern>/ServletReqInfo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OptimRunner</servlet-name>
+    <url-pattern>/OptimRunner</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServletDeleteFolder</servlet-name>
+    <url-pattern>/ServletDeleteFolder</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AuditTrialDecodeServlet</servlet-name>
+    <url-pattern>/AuditTrialDecodeServlet</url-pattern>
+  </servlet-mapping>
+  <session-config>
+    <session-timeout>15</session-timeout>
+  </session-config>
+  <welcome-file-list>
+    <welcome-file>unknownerror.xml</welcome-file>
+  </welcome-file-list>
+  <error-page>
+    <error-code>203</error-code>
+    <location>/unknownerror.xml</location>
+  </error-page>
+   <resource-ref>
+    <res-ref-name>jdbc/SiebelDataSource</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+    <res-sharing-scope>Shareable</res-sharing-scope>
+  </resource-ref>
+</web-app>
